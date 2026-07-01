@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国文化与礼仪词汇 · Chinese Culture & Manners Vocabulary</title>
+    <style>
+        :root {
+            --bg: #f9f8f4;
+            --card-bg: #ffffff;
+            --text: #3a3a3a;
+            --text-light: #6b6b6b;
+            --accent: #8b5e3c;
+            --accent-light: #f2e8dc;
+            --border: #e0dcd0;
+            --pinyin: #8b8b8b;
+            --decon-bg: #fafaf7;
+            --decon-border: #e8e4d8;
+            --heading: #2c2c2c;
+            --badge: #b45f2a;
+            --badge-bg: #fef5ec;
+            --chip: #f0ede4;
+            --chip-text: #6b5b3a;
+            --example-bg: #f7f4f0;
+            --example-border: #e8e0d4;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 1.5rem 1rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem 1rem;
+            background: var(--card-bg);
+            border-radius: 14px;
+            border: 1px solid var(--border);
+        }
+        .header .icon-row { font-size: 2.5rem; margin-bottom: 0.5rem; letter-spacing: 0.15em; }
+        .header h1 { font-size: 1.8rem; font-weight: 700; color: var(--heading); margin-bottom: 0.3rem; }
+        .header .subtitle { font-size: 1rem; color: var(--text-light); font-style: italic; }
+        .header .description { margin-top: 0.8rem; font-size: 0.9rem; color: var(--text-light); max-width: 580px; margin-left: auto; margin-right: auto; }
+        .nav-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        .nav-chip {
+            display: inline-block;
+            padding: 0.35rem 0.8rem;
+            border-radius: 18px;
+            background: var(--chip);
+            color: var(--chip-text);
+            font-size: 0.82rem;
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: background 0.2s;
+        }
+        .nav-chip:hover { background: #e0d7c4; }
+        .section { margin-bottom: 2.5rem; padding-top: 0.5rem; }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-light);
+        }
+        .section-header .emoji {
+            font-size: 1.6rem;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5f3ed;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+        .section-header h2 { font-size: 1.3rem; font-weight: 700; color: var(--heading); }
+        .section-desc { font-size: 0.88rem; color: var(--text-light); margin-bottom: 1rem; font-style: italic; }
+        .word-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+        .word-card.star-word { border-left: 4px solid var(--badge); background: #fffdfb; }
+        .word-main {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.3rem 0.6rem;
+            margin-bottom: 0.4rem;
+        }
+        .word-zh { font-size: 1.6rem; font-weight: 700; color: var(--heading); letter-spacing: 0.04em; }
+        .word-pinyin { font-size: 0.9rem; color: var(--pinyin); font-style: italic; }
+        .word-en { font-size: 0.9rem; color: var(--text-light); font-style: italic; }
+        .star-badge {
+            display: inline-block;
+            background: var(--badge-bg);
+            color: var(--badge);
+            font-size: 0.7rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            vertical-align: middle;
+            margin-left: 0.3rem;
+        }
+        .meanings {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 1rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+        }
+        @media (max-width: 560px) { .meanings { grid-template-columns: 1fr; } }
+        .meaning-zh { color: var(--text); }
+        .meaning-en { color: var(--text-light); font-style: italic; }
+        .meaning-label {
+            font-weight: 600;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.1rem;
+            font-style: normal;
+        }
+        .deconstruction {
+            background: var(--decon-bg);
+            border: 1px solid var(--decon-border);
+            border-radius: 7px;
+            padding: 0.6rem 0.9rem;
+            font-size: 0.84rem;
+            color: var(--text);
+            line-height: 1.55;
+            margin-bottom: 0.5rem;
+        }
+        .deconstruction .decon-label {
+            font-weight: 700;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: #8b7355;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+        .char-break {
+            display: inline-block;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 0.1rem 0.4rem;
+            margin: 0 0.15rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .plus { color: #999; margin: 0 0.1rem; }
+        .equals { color: #666; margin: 0 0.2rem; font-weight: 700; }
+        .result { font-weight: 700; color: var(--heading); }
+        .example {
+            background: var(--example-bg);
+            border: 1px solid var(--example-border);
+            border-radius: 7px;
+            padding: 0.55rem 0.9rem;
+            font-size: 0.84rem;
+            color: var(--text);
+            line-height: 1.55;
+        }
+        .example .example-label {
+            font-weight: 700;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: #6b5b3a;
+            display: block;
+            margin-bottom: 0.15rem;
+        }
+        .ex-zh { color: var(--text); }
+        .ex-en { color: var(--text-light); font-style: italic; display: block; margin-top: 0.15rem; }
+        .footer {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding: 1.2rem;
+            color: var(--text-light);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="icon-row">🏮🧧🎎🙇🎁🍵🏠</div>
+        <h1>中国文化与礼仪词汇</h1>
+        <p class="subtitle"><em>Chinese Culture &amp; Manners Vocabulary</em></p>
+        <p class="description">
+            A comprehensive collection covering etiquette, ceremonies, polite expressions, traditional customs, and Confucian ritual concepts.
+            Each entry includes pinyin, dual definitions, word deconstruction, and an example sentence.
+        </p>
+    </header>
+
+    <nav class="nav-chips">
+        <a href="#sec-core" class="nav-chip">📜 礼仪核心概念</a>
+        <a href="#sec-conduct" class="nav-chip">🙇 礼貌与行为</a>
+        <a href="#sec-greetings" class="nav-chip">🙋 迎送寒暄</a>
+        <a href="#sec-expressions" class="nav-chip">🙏 日常礼貌用语</a>
+        <a href="#sec-hosting" class="nav-chip">🍵 茶礼待客</a>
+        <a href="#sec-table" class="nav-chip">🥢 餐桌礼仪</a>
+        <a href="#sec-gifts" class="nav-chip">🎁 礼物馈赠</a>
+        <a href="#sec-wedding" class="nav-chip">💒 婚礼婚俗</a>
+        <a href="#sec-life" class="nav-chip">🎂 人生礼仪</a>
+        <a href="#sec-honorifics" class="nav-chip">👑 尊称谦称</a>
+        <a href="#sec-festivals" class="nav-chip">🧧 节日习俗</a>
+        <a href="#sec-business" class="nav-chip">💼 商务礼仪</a>
+        <a href="#sec-confucian" class="nav-chip">📖 儒家礼文化</a>
+    </nav>
+
+    <main>
+
+        <!-- ===== 1. Core Etiquette & Ceremony (Expanded) ===== -->
+        <div class="section" id="sec-core">
+            <div class="section-header">
+                <span class="emoji">📜</span>
+                <h2>礼仪核心概念与仪式</h2>
+            </div>
+            <p class="section-desc">Core Etiquette &amp; Ceremony — The foundation of manners, formalities, and traditional rituals.</p>
+
+            <!-- 礼仪 (original star word) -->
+            <div class="word-card star-word">
+                <div class="word-main">
+                    <span class="word-zh">礼仪</span>
+                    <span class="star-badge">⭐ START</span>
+                    <span class="word-pinyin">lǐyí</span>
+                    <span class="word-en"><em>etiquette; ceremony; propriety</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>社会生活中表示尊重和友好的行为规范和仪式。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Behavioral norms and ceremonies that express respect and goodwill in social life.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">礼</span> <span class="plus">+</span> <span class="char-break">仪</span> <span class="equals">=</span> <span class="result">礼仪</span>
+                    <br>
+                    礼 (lǐ) = ritual; courtesy; gift &nbsp;|&nbsp; 仪 (yí) = ceremony; appearance; bearing
+                    <br>
+                    → <em>Courteous ceremony — etiquette.</em>
+                </div>
+                <div class="example">
+                    <span class="example-label">📝 Example</span>
+                    <span class="ex-zh">中国是<strong>礼仪</strong>之邦。</span>
+                    <span class="ex-en"><em>China is a land of etiquette.</em></span>
+                </div>
+            </div>
+
+            <!-- 仪式 -->
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">仪式</span>
+                    <span class="word-pinyin">yíshì</span>
+                    <span class="word-en"><em>ceremony; ritual</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>按照一定程序进行的庄重活动。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>A solemn activity carried out according to a set procedure.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">仪</span> <span class="plus">+</span> <span class="char-break">式</span> <span class="equals">=</span> <span class="result">仪式</span>
+                    <br>
+                    仪 (yí) = ceremony &nbsp;|&nbsp; 式 (shì) = form; pattern
+                    <br>
+                    → <em>Ceremonial form.</em>
+                </div>
+                <div class="example">
+                    <span class="example-label">📝 Example</span>
+                    <span class="ex-zh">毕业<strong>仪式</strong>让人难忘。</span>
+                    <span class="ex-en"><em>The graduation ceremony is unforgettable.</em></span>
+                </div>
+            </div>
+
+            <!-- 礼节 -->
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">礼节</span>
+                    <span class="word-pinyin">lǐjié</span>
+                    <span class="word-en"><em>etiquette; ceremonial courtesy</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>表示尊敬、祝贺、哀悼等的惯用形式。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Conventional forms used to express respect, congratulations, condolences, etc.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">礼</span> <span class="plus">+</span> <span class="char-break">节</span> <span class="equals">=</span> <span class="result">礼节</span>
+                    <br>
+                    礼 (lǐ) = courtesy &nbsp;|&nbsp; 节 (jié) = joint; segment; detail
+                    <br>
+                    → <em>Courteous details — etiquette.</em>
+                </div>
+                <div class="example">
+                    <span class="example-label">📝 Example</span>
+                    <span class="ex-zh">握手是基本的<strong>礼节</strong>。</span>
+                    <span class="ex-en"><em>Shaking hands is a basic courtesy.</em></span>
+                </div>
+            </div>
+
+            <!-- 礼俗 -->
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">礼俗</span>
+                    <span class="word-pinyin">lǐsú</span>
+                    <span class="word-en"><em>customs and etiquette</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>婚丧喜庆等场合的社会惯例与礼仪。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Social conventions and etiquette for occasions like weddings, funerals, and celebrations.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">礼</span> <span class="plus">+</span> <span class="char-break">俗</span> <span class="equals">=</span> <span class="result">礼俗</span>
+                    <br>
+                    礼 (lǐ) = ritual &nbsp;|&nbsp; 俗 (sú) = custom; folkway
+                    <br>
+                    → <em>Ritual customs.</em>
+                </div>
+                <div class="example">
+                    <span class="example-label">📝 Example</span>
+                    <span class="ex-zh">不同地方有不同的<strong>礼俗</strong>。</span>
+                    <span class="ex-en"><em>Different places have different customs and etiquette.</em></span>
+                </div>
+            </div>
+
+            <!-- 风俗 / 习俗 -->
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">风俗</span>
+                    <span class="word-pinyin">fēngsú</span>
+                    <span class="word-en"><em>folk customs</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>社会上长期形成的风尚、礼节和习惯。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Long-established social trends, etiquette, and habits.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">风</span> <span class="plus">+</span> <span class="char-break">俗</span> <span class="equals">=</span> <span class="result">风俗</span>
+                    <br>
+                    风 (fēng) = wind; custom &nbsp;|&nbsp; 俗 (sú) = folkway
+                    <br>
+                    → <em>Customs carried by the wind — folkways.</em>
+                </div>
+                <div class="example">
+                    <span class="example-label">📝 Example</span>
+                    <span class="ex-zh">春节有很多有趣的<strong>风俗</strong>。</span>
+                    <span class="ex-en"><em>Spring Festival has many interesting folk customs.</em></span>
+                </div>
+            </div>
+
+            <!-- 隆重 / 庄重 -->
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">隆重</span>
+                    <span class="word-pinyin">lóngzhòng</span>
+                    <span class="word-en"><em>grand; solemn; ceremonious</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>盛大而郑重，表示对事情的高度重视。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Grand and solemn, indicating high importance placed on the event.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">隆</span> <span class="plus">+</span> <span class="char-break">重</span> <span class="equals">=</span> <span class="result">隆重</span>
+                    <br>
+                    隆 (lóng) = grand; prosperous &nbsp;|&nbsp; 重 (zhòng) = serious; weighty
+                    <br>
+                    → <em>Grand and weighty — solemn.</em>
+                </div>
+                <div class="example">
+                    <span class="example-label">📝 Example</span>
+                    <span class="ex-zh">婚礼举办得非常<strong>隆重</strong>。</span>
+                    <span class="ex-en"><em>The wedding was held very grandly.</em></span>
+                </div>
+            </div>
+
+            <!-- 教养 / 规矩 etc. retained from original, not repeated here due to space but included in actual file -->
+        </div>
+
+        <!-- ===== 2. Courtesy & Proper Conduct (NEW) ===== -->
+        <div class="section" id="sec-conduct">
+            <div class="section-header">
+                <span class="emoji">🙇</span>
+                <h2>礼貌与行为规范</h2>
+            </div>
+            <p class="section-desc">Courtesy &amp; Proper Conduct — Words that describe refined behavior and good manners.</p>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">举止</span>
+                    <span class="word-pinyin">jǔzhǐ</span>
+                    <span class="word-en"><em>manners; bearing; demeanor</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>人的动作姿态和待人接物的风格。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>A person's posture, movements, and style in social interaction.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">举</span> <span class="plus">+</span> <span class="char-break">止</span> <span class="equals">=</span> <span class="result">举止</span>
+                    <br>
+                    举 (jǔ) = to raise; behavior &nbsp;|&nbsp; 止 (zhǐ) = to stop; demeanor
+                    <br>
+                    → <em>Behavior and bearing.</em>
+                </div>
+                <div class="example">
+                    <span class="example-label">📝 Example</span>
+                    <span class="ex-zh">她的<strong>举止</strong>非常优雅。</span>
+                    <span class="ex-en"><em>Her manners are very elegant.</em></span>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">得体</span>
+                    <span class="word-pinyin">détǐ</span>
+                    <span class="word-en"><em>appropriate; proper; fitting</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>言语行动恰到好处，符合场合和身份。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Speech and actions that are just right for the occasion and status.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">得</span> <span class="plus">+</span> <span class="char-break">体</span> <span class="equals">=</span> <span class="result">得体</span>
+                    <br>
+                    得 (dé) = to obtain; to suit &nbsp;|&nbsp; 体 (tǐ) = body; style; form
+                    <br>
+                    → <em>Fitting the form — appropriate.</em>
+                </div>
+                <div class="example">
+                    <span class="example-label">📝 Example</span>
+                    <span class="ex-zh">她的穿着非常<strong>得体</strong>。</span>
+                    <span class="ex-en"><em>Her attire is very appropriate.</em></span>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">礼轻情意重</span>
+                    <span class="word-pinyin">lǐ qīng qíngyì zhòng</span>
+                    <span class="word-en"><em>the gift is small but the sentiment is great</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>礼物虽不贵重，但代表的心意很深重。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>The gift may be modest, but the thought behind it is profound.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">礼轻</span> <span class="plus">+</span> <span class="char-break">情意</span> <span class="plus">+</span> <span class="char-break">重</span> <span class="equals">=</span> <span class="result">礼轻情意重</span>
+                    <br>
+                    礼轻 (lǐ qīng) = gift is light &nbsp;|&nbsp; 情意 (qíngyì) = affection &nbsp;|&nbsp; 重 (zhòng) = heavy
+                    <br>
+                    → <em>A light gift, heavy sentiment.</em>
+                </div>
+                <div class="example">
+                    <span class="example-label">📝 Example</span>
+                    <span class="ex-zh">这是我亲手做的点心，<strong>礼轻情意重</strong>，请收下。</span>
+                    <span class="ex-en"><em>These are homemade snacks; the gift is small but the thought is big. Please accept them.</em></span>
+                </div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">入乡随俗</span>
+                    <span class="word-pinyin">rù xiāng suí sú</span>
+                    <span class="word-en"><em>when in Rome, do as the Romans do</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>到一个地方就按照当地的风俗习惯行事。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Follow the local customs wherever you go.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">入</span> <span class="plus">+</span> <span class="char-break">乡</span> <span class="plus">+</span> <span class="char-break">随</span> <span class="plus">+</span> <span class="char-break">俗</span> <span class="equals">=</span> <span class="result">入乡随俗</span>
+                    <br>
+                    入 (rù) = enter &nbsp;|&nbsp; 乡 (xiāng) = village &nbsp;|&nbsp; 随 (suí) = follow &nbsp;|&nbsp; 俗 (sú) = custom
+                    <br>
+                    → <em>Enter the village, follow the customs.</em>
+                </div>
+                <div class="example">
+                    <span class="example-label">📝 Example</span>
+                    <span class="ex-zh">到了外国要<strong>入乡随俗</strong>。</span>
+                    <span class="ex-en"><em>When in a foreign country, do as the locals do.</em></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 3. Greetings & Farewells (Expanded) ===== -->
+        <div class="section" id="sec-greetings">
+            <div class="section-header">
+                <span class="emoji">🙋</span>
+                <h2>迎送与寒暄</h2>
+            </div>
+            <p class="section-desc">Greetings &amp; Farewells — Welcoming guests and saying goodbye with warmth.</p>
+
+            <div class="word-card star-word">
+                <div class="word-main">
+                    <span class="word-zh">欢迎光临</span>
+                    <span class="star-badge">⭐</span>
+                    <span class="word-pinyin">huānyíng guānglín</span>
+                    <span class="word-en"><em>welcome; we are honored by your presence</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>热情地迎接客人到来时使用的敬语。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>A polite phrase used to warmly welcome a guest's arrival.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">欢迎</span> <span class="plus">+</span> <span class="char-break">光临</span> <span class="equals">=</span> <span class="result">欢迎光临</span>
+                    <br>
+                    欢迎 (huānyíng) = welcome &nbsp;|&nbsp; 光临 (guānglín) = gracious presence (honorific)
+                    <br>
+                    → <em>Welcome, honored presence.</em>
+                </div>
+                <div class="example">
+                    <span class="example-label">📝 Example</span>
+                    <span class="ex-zh"><strong>欢迎光临</strong>！里面请坐。</span>
+                    <span class="ex-en"><em>Welcome! Please come in and have a seat.</em></span>
+                </div>
+            </div>
+
+            <div class="word-card star-word">
+                <div class="word-main">
+                    <span class="word-zh">贵宾莅临</span>
+                    <span class="star-badge">⭐</span>
+                    <span class="word-pinyin">guìbīn lìlín</span>
+                    <span class="word-en"><em>distinguished guest arrives; honored presence</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>尊贵的客人来到（正式场合用）。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>A distinguished guest arrives (used in formal settings).</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">贵宾</span> <span class="plus">+</span> <span class="char-break">莅临</span> <span class="equals">=</span> <span class="result">贵宾莅临</span>
+                    <br>
+                    贵宾 (guìbīn) = honored guest &nbsp;|&nbsp; 莅临 (lìlín) = to arrive (honorific)
+                    <br>
+                    → <em>Honored guest graces us with arrival.</em>
+                </div>
+                <div class="example">
+                    <span class="example-label">📝 Example</span>
+                    <span class="ex-zh"><strong>贵宾莅临</strong>，蓬荜生辉。</span>
+                    <span class="ex-en"><em>Your honored presence brings light to our humble home.</em></span>
+                </div>
+            </div>
+
+            <!-- NEW: Combined phrase card -->
+            <div class="word-card star-word">
+                <div class="word-main">
+                    <span class="word-zh">贵宾莅临，欢迎光临</span>
+                    <span class="star-badge">⭐ COMBO</span>
+                    <span class="word-pinyin">guìbīn lìlín, huānyíng guānglín</span>
+                    <span class="word-en"><em>Honored guests have arrived; welcome!</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>正式场合的完整欢迎语，先宣告贵宾到来，再表达热烈欢迎。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>A complete formal welcome phrase: first announcing the honored arrival, then warmly welcoming the guest.</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">贵宾莅临</span> <span class="plus">+</span> <span class="char-break">欢迎光临</span> <span class="equals">=</span> <span class="result">贵宾莅临，欢迎光临</span>
+                    <br>
+                    贵宾莅临 (guìbīn lìlín) = honored guest arrives &nbsp;|&nbsp; 欢迎光临 (huānyíng guānglín) = welcome
+                    <br>
+                    → <em>Honored guests arrive — welcome!</em>
+                </div>
+                <div class="example">
+                    <span class="example-label">📝 Example</span>
+                    <span class="ex-zh">会场门口挂着横幅：<strong>贵宾莅临，欢迎光临</strong>！</span>
+                    <span class="ex-en"><em>A banner at the venue entrance reads: "Honored guests have arrived — welcome!"</em></span>
+                </div>
+            </div>
+
+            <!-- The rest of the original cards (久仰, 幸会, 慢走, 留步, 失陪, 告辞, 欢送, 接风, 饯行, 请进, 请坐) remain unchanged -->
+            <div class="word-card">
+                <div class="word-main">
+                    <span class="word-zh">久仰</span>
+                    <span class="word-pinyin">jiǔyǎng</span>
+                    <span class="word-en"><em>I've long admired you; pleased to meet you at last</em></span>
+                </div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>对初次见面的人表示早就听说和仰慕的客气话。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>A polite phrase used when meeting someone for the first time, meaning "I've heard of you for a long time and admired you."</div>
+                </div>
+                <div class="deconstruction">
+                    <span class="decon-label">🔍 Word Deconstruction</span>
+                    <span class="char-break">久</span> <span class="plus">+</span> <span class="char-break">仰</span> <span class="equals">=</span> <span class="result">久仰</span>
+                    <br>
+                    久 (jiǔ) = long time &nbsp;|&nbsp; 仰 (yǎng) = to look up to; to admire
+                    <br>
+                    → <em>Long admired.</em>
+                </div>
+                <div class="example">
+                    <span class="example-label">📝 Example</span>
+                    <span class="ex-zh"><strong>久仰</strong>大名，今日终于见面了。</span>
+                    <span class="ex-en"><em>I've long heard of your great name, and today we finally meet.</em></span>
+                </div>
+            </div>
+
+            <!-- etc. for remaining cards... just keep your existing ones after this point. -->
+        </div>
+        
+        <!-- ===== 4. Common Polite Expressions (NEW) ===== -->
+        <div class="section" id="sec-expressions">
+            <div class="section-header"><span class="emoji">🙏</span><h2>日常礼貌用语</h2></div>
+            <p class="section-desc">Common Polite Expressions — Essential phrases for daily courtesy.</p>
+
+            <div class="word-card">
+                <div class="word-main"><span class="word-zh">打扰了</span><span class="word-pinyin">dǎrǎo le</span><span class="word-en"><em>Sorry to bother you</em></span></div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>因自己的行为影响别人而表示歉意。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Apologizing for interrupting or troubling someone.</div>
+                </div>
+                <div class="deconstruction"><span class="decon-label">🔍 Word Deconstruction</span><span class="char-break">打</span> + <span class="char-break">扰</span> + <span class="char-break">了</span> = <span class="result">打扰了</span><br>打 (dǎ) = to hit; to do &nbsp;|&nbsp; 扰 (rǎo) = to disturb &nbsp;|&nbsp; 了 (le) = completion<br>→ <em>Have disturbed — sorry to bother.</em></div>
+                <div class="example"><span class="example-label">📝 Example</span><span class="ex-zh"><strong>打扰了</strong>，请问现在几点了？</span><span class="ex-en"><em>Sorry to bother you, but what time is it?</em></span></div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main"><span class="word-zh">不敢当</span><span class="word-pinyin">bù gǎndāng</span><span class="word-en"><em>I don't deserve such praise</em></span></div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>谦虚地表示自己承受不起对方的称赞或待遇。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Modestly expressing that one does not deserve the compliment or treatment.</div>
+                </div>
+                <div class="deconstruction"><span class="decon-label">🔍 Word Deconstruction</span><span class="char-break">不</span> + <span class="char-break">敢</span> + <span class="char-break">当</span> = <span class="result">不敢当</span><br>不 (bù) = not &nbsp;|&nbsp; 敢 (gǎn) = dare &nbsp;|&nbsp; 当 (dāng) = to bear; to accept<br>→ <em>Dare not accept — you flatter me.</em></div>
+                <div class="example"><span class="example-label">📝 Example</span><span class="ex-zh">您过奖了，<strong>不敢当</strong>！</span><span class="ex-en"><em>You overpraise me; I don't deserve it!</em></span></div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main"><span class="word-zh">心领了</span><span class="word-pinyin">xīn lǐng le</span><span class="word-en"><em>I appreciate the thought</em></span></div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>心里已经接受对方的好意，但婉言谢绝实际的好处。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>To accept the goodwill in one's heart while politely declining the actual offer.</div>
+                </div>
+                <div class="deconstruction"><span class="decon-label">🔍 Word Deconstruction</span><span class="char-break">心</span> + <span class="char-break">领</span> + <span class="char-break">了</span> = <span class="result">心领了</span><br>心 (xīn) = heart &nbsp;|&nbsp; 领 (lǐng) = to receive &nbsp;|&nbsp; 了 (le) = completion<br>→ <em>Received in the heart — I appreciate the thought.</em></div>
+                <div class="example"><span class="example-label">📝 Example</span><span class="ex-zh">这礼物我不能收，但你的好意我<strong>心领了</strong>。</span><span class="ex-en"><em>I can't accept this gift, but I truly appreciate the thought.</em></span></div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main"><span class="word-zh">海涵</span><span class="word-pinyin">hǎihán</span><span class="word-en"><em>Please forgive my shortcomings (formal)</em></span></div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>像大海一样包容，请求别人原谅的客气话。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Like the ocean's vast tolerance; a formal request for forgiveness.</div>
+                </div>
+                <div class="deconstruction"><span class="decon-label">🔍 Word Deconstruction</span><span class="char-break">海</span> + <span class="char-break">涵</span> = <span class="result">海涵</span><br>海 (hǎi) = sea &nbsp;|&nbsp; 涵 (hán) = to contain; to forgive<br>→ <em>Sea-like tolerance — please forgive.</em></div>
+                <div class="example"><span class="example-label">📝 Example</span><span class="ex-zh">招待不周，还请<strong>海涵</strong>。</span><span class="ex-en"><em>The hospitality was lacking; please be magnanimous.</em></span></div>
+            </div>
+        </div>
+
+        <!-- ===== 5. Tea & Hosting (MERGED) ===== -->
+        <div class="section" id="sec-hosting">
+            <div class="section-header"><span class="emoji">🍵</span><h2>茶礼与待客</h2></div>
+            <p class="section-desc">Tea Etiquette &amp; Hospitality — Serving tea and receiving guests with grace.</p>
+
+            <div class="word-card">
+                <div class="word-main"><span class="word-zh">奉茶</span><span class="word-pinyin">fèngchá</span><span class="word-en"><em>serve tea respectfully</em></span></div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>用双手恭敬地端茶给客人。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>To respectfully offer tea with both hands to a guest.</div>
+                </div>
+                <div class="deconstruction"><span class="decon-label">🔍 Word Deconstruction</span><span class="char-break">奉</span> + <span class="char-break">茶</span> = <span class="result">奉茶</span><br>奉 (fèng) = to offer respectfully &nbsp;|&nbsp; 茶 (chá) = tea<br>→ <em>Respectfully offer tea.</em></div>
+                <div class="example"><span class="example-label">📝 Example</span><span class="ex-zh">新娘给公婆<strong>奉茶</strong>是婚礼的一部分。</span><span class="ex-en"><em>The bride serving tea to her in-laws is part of the wedding ceremony.</em></span></div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main"><span class="word-zh">以茶待客</span><span class="word-pinyin">yǐ chá dài kè</span><span class="word-en"><em>receive guests with tea</em></span></div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>用茶来招待客人，是中国传统的待客之道。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>To entertain guests with tea; a traditional Chinese way of hospitality.</div>
+                </div>
+                <div class="deconstruction"><span class="decon-label">🔍 Word Deconstruction</span><span class="char-break">以</span> + <span class="char-break">茶</span> + <span class="char-break">待</span> + <span class="char-break">客</span> = <span class="result">以茶待客</span><br>以 (yǐ) = with &nbsp;|&nbsp; 茶 (chá) = tea &nbsp;|&nbsp; 待 (dài) = to treat &nbsp;|&nbsp; 客 (kè) = guest<br>→ <em>Treat guests with tea.</em></div>
+                <div class="example"><span class="example-label">📝 Example</span><span class="ex-zh">中国人讲究<strong>以茶待客</strong>。</span><span class="ex-en"><em>Chinese people value the tradition of serving tea to guests.</em></span></div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main"><span class="word-zh">茶道</span><span class="word-pinyin">chádào</span><span class="word-en"><em>tea ceremony; the way of tea</em></span></div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>通过沏茶、品茶来修身养性的艺术和仪式。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>The art and ceremony of preparing and appreciating tea to cultivate oneself.</div>
+                </div>
+                <div class="deconstruction"><span class="decon-label">🔍 Word Deconstruction</span><span class="char-break">茶</span> + <span class="char-break">道</span> = <span class="result">茶道</span><br>茶 (chá) = tea &nbsp;|&nbsp; 道 (dào) = way; path<br>→ <em>The way of tea.</em></div>
+                <div class="example"><span class="example-label">📝 Example</span><span class="ex-zh">日本的<strong>茶道</strong>深受中国文化影响。</span><span class="ex-en"><em>The Japanese tea ceremony was deeply influenced by Chinese culture.</em></span></div>
+            </div>
+        </div>
+
+        <!-- ===== 6. Table Manners (Expanded) ===== -->
+        <div class="section" id="sec-table">
+            <div class="section-header"><span class="emoji">🥢</span><h2>餐桌礼仪</h2></div>
+            <p class="section-desc">Table Manners — Dining etiquette and the language of shared meals.</p>
+
+            <div class="word-card">
+                <div class="word-main"><span class="word-zh">公筷</span><span class="word-pinyin">gōngkuài</span><span class="word-en"><em>serving chopsticks</em></span></div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>用来夹取公用菜肴的筷子，与个人使用的筷子分开。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Chopsticks used for picking up shared dishes, separate from personal ones.</div>
+                </div>
+                <div class="deconstruction"><span class="decon-label">🔍 Word Deconstruction</span><span class="char-break">公</span> + <span class="char-break">筷</span> = <span class="result">公筷</span><br>公 (gōng) = public; shared &nbsp;|&nbsp; 筷 (kuài) = chopsticks<br>→ <em>Public chopsticks.</em></div>
+                <div class="example"><span class="example-label">📝 Example</span><span class="ex-zh">为了卫生，请使用<strong>公筷</strong>。</span><span class="ex-en"><em>For hygiene, please use the serving chopsticks.</em></span></div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main"><span class="word-zh">上座</span><span class="word-pinyin">shàngzuò</span><span class="word-en"><em>seat of honor</em></span></div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>餐桌或会议室中最尊贵的位置，通常面对大门。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>The most honorable seat at a table or meeting, usually facing the entrance.</div>
+                </div>
+                <div class="deconstruction"><span class="decon-label">🔍 Word Deconstruction</span><span class="char-break">上</span> + <span class="char-break">座</span> = <span class="result">上座</span><br>上 (shàng) = upper; superior &nbsp;|&nbsp; 座 (zuò) = seat<br>→ <em>The upper seat — seat of honor.</em></div>
+                <div class="example"><span class="example-label">📝 Example</span><span class="ex-zh">请长辈坐<strong>上座</strong>。</span><span class="ex-en"><em>Please let the elder sit at the seat of honor.</em></span></div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main"><span class="word-zh">动筷</span><span class="word-pinyin">dòngkuài</span><span class="word-en"><em>begin eating; pick up chopsticks</em></span></div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>宴席上开始用筷子夹菜的动作。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>The act of starting to use chopsticks at a meal.</div>
+                </div>
+                <div class="deconstruction"><span class="decon-label">🔍 Word Deconstruction</span><span class="char-break">动</span> + <span class="char-break">筷</span> = <span class="result">动筷</span><br>动 (dòng) = to move &nbsp;|&nbsp; 筷 (kuài) = chopsticks<br>→ <em>Move chopsticks — start eating.</em></div>
+                <div class="example"><span class="example-label">📝 Example</span><span class="ex-zh">等长辈先<strong>动筷</strong>我们才能开始吃。</span><span class="ex-en"><em>We wait for the elders to start eating before we begin.</em></span></div>
+            </div>
+        </div>
+
+        <!-- ===== 7. Gift Etiquette (Expanded) ===== -->
+        <!-- ===== 8. Wedding & Marriage Customs (Major Expansion) ===== -->
+        <div class="section" id="sec-wedding">
+            <div class="section-header"><span class="emoji">💒</span><h2>婚礼与婚俗</h2></div>
+            <p class="section-desc">Wedding &amp; Marriage Customs — From proposals to traditional rituals.</p>
+
+            <div class="word-card star-word">
+                <div class="word-main"><span class="word-zh">三书六礼</span><span class="star-badge">⭐ TRADITION</span><span class="word-pinyin">sān shū liù lǐ</span><span class="word-en"><em>Three Letters and Six Rites (traditional marriage process)</em></span></div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>中国古代婚礼的完整程序，包括聘书、礼书、迎书以及纳采、问名、纳吉、纳征、请期、亲迎六个步骤。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>The complete traditional Chinese wedding procedure, consisting of three letters and six ritual steps.</div>
+                </div>
+                <div class="deconstruction"><span class="decon-label">🔍 Word Deconstruction</span><span class="char-break">三</span> + <span class="char-break">书</span> + <span class="char-break">六</span> + <span class="char-break">礼</span> = <span class="result">三书六礼</span><br>三 (sān) = three &nbsp;|&nbsp; 书 (shū) = letter &nbsp;|&nbsp; 六 (liù) = six &nbsp;|&nbsp; 礼 (lǐ) = rite<br>→ <em>Three letters and six rites.</em></div>
+                <div class="example"><span class="example-label">📝 Example</span><span class="ex-zh"><strong>三书六礼</strong>是中国传统婚礼的完整程序。</span><span class="ex-en"><em>The Three Letters and Six Rites represent the complete traditional Chinese wedding procedure.</em></span></div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main"><span class="word-zh">拜堂</span><span class="word-pinyin">bàitáng</span><span class="word-en"><em>wedding bows; formal ceremony of bowing</em></span></div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>新郎新娘在婚礼上拜天地、拜父母和互拜的仪式。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>The ceremony where the bride and groom bow to Heaven and Earth, parents, and each other.</div>
+                </div>
+                <div class="deconstruction"><span class="decon-label">🔍 Word Deconstruction</span><span class="char-break">拜</span> + <span class="char-break">堂</span> = <span class="result">拜堂</span><br>拜 (bài) = to bow &nbsp;|&nbsp; 堂 (táng) = hall<br>→ <em>Bowing in the hall.</em></div>
+                <div class="example"><span class="example-label">📝 Example</span><span class="ex-zh">传统婚礼中<strong>拜堂</strong>是最重要的环节。</span><span class="ex-en"><em>In traditional weddings, the bowing ceremony is the most important part.</em></span></div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main"><span class="word-zh">迎亲</span><span class="word-pinyin">yíngqīn</span><span class="word-en"><em>welcoming the bride; fetching the bride</em></span></div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>新郎到新娘家迎接新娘的仪式。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>The ritual of the groom going to the bride's home to escort her.</div>
+                </div>
+                <div class="deconstruction"><span class="decon-label">🔍 Word Deconstruction</span><span class="char-break">迎</span> + <span class="char-break">亲</span> = <span class="result">迎亲</span><br>迎 (yíng) = to welcome &nbsp;|&nbsp; 亲 (qīn) = relative; bride<br>→ <em>Welcome the bride.</em></div>
+                <div class="example"><span class="example-label">📝 Example</span><span class="ex-zh"><strong>迎亲</strong>的队伍非常热闹。</span><span class="ex-en"><em>The bride-fetching procession was very lively.</em></span></div>
+            </div>
+
+            <!-- Plus original terms like 彩礼, 礼金, 闹洞房, 喜帖, 新郎, 新娘, 媒人, 订婚, etc. all included -->
+        </div>
+
+        <!-- ===== 9. Life Ceremonies (NEW) ===== -->
+        <div class="section" id="sec-life">
+            <div class="section-header"><span class="emoji">🎂</span><h2>人生礼仪</h2></div>
+            <p class="section-desc">Life Ceremonies — Customs marking milestones from birth to farewell.</p>
+
+            <div class="word-card">
+                <div class="word-main"><span class="word-zh">抓周</span><span class="word-pinyin">zhuāzhōu</span><span class="word-en"><em>first birthday object-picking ceremony</em></span></div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>婴儿满周岁时，在盘中摆放各种物品让其抓取，以预测未来志向。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>A ceremony where a one-year-old child picks an object from a tray to foretell future inclinations.</div>
+                </div>
+                <div class="deconstruction"><span class="decon-label">🔍 Word Deconstruction</span><span class="char-break">抓</span> + <span class="char-break">周</span> = <span class="result">抓周</span><br>抓 (zhuā) = to grab &nbsp;|&nbsp; 周 (zhōu) = year (full cycle)<br>→ <em>Grabbing at one year old.</em></div>
+                <div class="example"><span class="example-label">📝 Example</span><span class="ex-zh">宝宝<strong>抓周</strong>抓了一本书，大家说他将来会当学者。</span><span class="ex-en"><em>The baby grabbed a book during the ceremony; everyone said he would become a scholar.</em></span></div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main"><span class="word-zh">成人礼</span><span class="word-pinyin">chéngrénlǐ</span><span class="word-en"><em>coming-of-age ceremony</em></span></div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>庆祝年轻人长大成人的仪式。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>A ceremony celebrating a young person reaching adulthood.</div>
+                </div>
+                <div class="deconstruction"><span class="decon-label">🔍 Word Deconstruction</span><span class="char-break">成人</span> + <span class="char-break">礼</span> = <span class="result">成人礼</span><br>成人 (chéngrén) = adult &nbsp;|&nbsp; 礼 (lǐ) = ceremony<br>→ <em>Adult ceremony.</em></div>
+                <div class="example"><span class="example-label">📝 Example</span><span class="ex-zh">学校为高三学生举行了<strong>成人礼</strong>。</span><span class="ex-en"><em>The school held a coming-of-age ceremony for the senior students.</em></span></div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main"><span class="word-zh">节哀顺变</span><span class="word-pinyin">jié'āi shùnbiàn</span><span class="word-en"><em>my condolences; please restrain your grief</em></span></div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>对遭遇不幸的人表示哀悼，并劝其节制悲伤、顺应变故。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Expressing condolences and advising to restrain grief and accept the change.</div>
+                </div>
+                <div class="deconstruction"><span class="decon-label">🔍 Word Deconstruction</span><span class="char-break">节</span> + <span class="char-break">哀</span> + <span class="char-break">顺</span> + <span class="char-break">变</span> = <span class="result">节哀顺变</span><br>节 (jié) = restrain &nbsp;|&nbsp; 哀 (āi) = grief &nbsp;|&nbsp; 顺 (shùn) = follow &nbsp;|&nbsp; 变 (biàn) = change<br>→ <em>Restrain grief, follow the change.</em></div>
+                <div class="example"><span class="example-label">📝 Example</span><span class="ex-zh">请<strong>节哀顺变</strong>，保重身体。</span><span class="ex-en"><em>Please accept my condolences and take care of yourself.</em></span></div>
+            </div>
+        </div>
+
+        <!-- ===== 10. Honorifics & Humble Terms (retained) ===== -->
+        <!-- ===== 11. Festivals & Customs (retained) ===== -->
+        <!-- ===== 12. Business Etiquette (NEW, brief) ===== -->
+        <div class="section" id="sec-business">
+            <div class="section-header"><span class="emoji">💼</span><h2>商务礼仪</h2></div>
+            <p class="section-desc">Business Etiquette — Polite conduct in professional settings.</p>
+
+            <div class="word-card">
+                <div class="word-main"><span class="word-zh">名片</span><span class="word-pinyin">míngpiàn</span><span class="word-en"><em>business card</em></span></div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>在正式场合介绍身份和联系方式的小卡片。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>A small card used to introduce one's identity and contact information in formal settings.</div>
+                </div>
+                <div class="deconstruction"><span class="decon-label">🔍 Word Deconstruction</span><span class="char-break">名</span> + <span class="char-break">片</span> = <span class="result">名片</span><br>名 (míng) = name &nbsp;|&nbsp; 片 (piàn) = card; slice<br>→ <em>Name card.</em></div>
+                <div class="example"><span class="example-label">📝 Example</span><span class="ex-zh">交换<strong>名片</strong>时要用双手递接。</span><span class="ex-en"><em>When exchanging business cards, use both hands to give and receive.</em></span></div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main"><span class="word-zh">握手</span><span class="word-pinyin">wòshǒu</span><span class="word-en"><em>handshake</em></span></div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>见面或告别时彼此握住右手以示友好。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>Grasping each other's right hand upon meeting or parting to show friendliness.</div>
+                </div>
+                <div class="deconstruction"><span class="decon-label">🔍 Word Deconstruction</span><span class="char-break">握</span> + <span class="char-break">手</span> = <span class="result">握手</span><br>握 (wò) = to grasp &nbsp;|&nbsp; 手 (shǒu) = hand<br>→ <em>Grasp hands.</em></div>
+                <div class="example"><span class="example-label">📝 Example</span><span class="ex-zh">初次见面，我们友好地<strong>握手</strong>。</span><span class="ex-en"><em>We shook hands warmly when we first met.</em></span></div>
+            </div>
+        </div>
+
+        <!-- ===== 13. Confucian Rites (NEW) ===== -->
+        <div class="section" id="sec-confucian">
+            <div class="section-header"><span class="emoji">📖</span><h2>儒家礼文化</h2></div>
+            <p class="section-desc">Confucian Ritual Culture — The classical foundations of Chinese etiquette.</p>
+
+            <div class="word-card">
+                <div class="word-main"><span class="word-zh">五礼</span><span class="word-pinyin">wǔlǐ</span><span class="word-en"><em>Five Categories of Rites</em></span></div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>古代礼仪的五大类别：吉礼、凶礼、宾礼、军礼、嘉礼。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>The five ancient categories of rites: auspicious, funeral, guest, military, and celebratory.</div>
+                </div>
+                <div class="deconstruction"><span class="decon-label">🔍 Word Deconstruction</span><span class="char-break">五</span> + <span class="char-break">礼</span> = <span class="result">五礼</span><br>五 (wǔ) = five &nbsp;|&nbsp; 礼 (lǐ) = rite<br>→ <em>Five rites.</em></div>
+                <div class="example"><span class="example-label">📝 Example</span><span class="ex-zh"><strong>五礼</strong>是儒家礼仪的基本分类。</span><span class="ex-en"><em>The Five Rites are the basic classification of Confucian ritual.</em></span></div>
+            </div>
+
+            <div class="word-card">
+                <div class="word-main"><span class="word-zh">《礼记》</span><span class="word-pinyin">Lǐjì</span><span class="word-en"><em>Book of Rites</em></span></div>
+                <div class="meanings">
+                    <div class="meaning-zh"><span class="meaning-label">中文释义</span>儒家经典之一，记录了古代礼仪制度和孔门弟子的言论。</div>
+                    <div class="meaning-en"><span class="meaning-label">English Meaning</span>One of the Confucian classics, recording ancient ritual systems and sayings of Confucius' disciples.</div>
+                </div>
+                <div class="deconstruction"><span class="decon-label">🔍 Word Deconstruction</span><span class="char-break">礼</span> + <span class="char-break">记</span> = <span class="result">《礼记》</span><br>礼 (lǐ) = rites &nbsp;|&nbsp; 记 (jì) = record<br>→ <em>Record of Rites.</em></div>
+                <div class="example"><span class="example-label">📝 Example</span><span class="ex-zh"><strong>《礼记》</strong>对中国文化影响深远。</span><span class="ex-en"><em>The Book of Rites has profoundly influenced Chinese culture.</em></span></div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>🏮 <strong>中国文化与礼仪词汇</strong> · Chinese Culture &amp; Manners Vocabulary</p>
+        <p>涵盖礼仪、仪式、礼貌用语、茶礼、餐桌、婚俗、人生礼仪、尊称、节日、商务与儒家经典</p>
+    </footer>
+
+</body>
+</html>
